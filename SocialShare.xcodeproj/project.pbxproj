@@ -15,6 +15,27 @@
 		686DB8431D07FBC6003867F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8411D07FBC6003867F1 /* LaunchScreen.storyboard */; };
 		686DB84E1D07FBC6003867F1 /* SocialShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB84D1D07FBC6003867F1 /* SocialShareTests.m */; };
 		686DB8591D07FBC6003867F1 /* SocialShareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8581D07FBC6003867F1 /* SocialShareUITests.m */; };
+		686DB86D1D07FBE3003867F1 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8681D07FBE3003867F1 /* libWeChatSDK.a */; };
+		686DB86E1D07FBE3003867F1 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8691D07FBE3003867F1 /* README.txt */; };
+		686DB87A1D080231003867F1 /* ShareManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8781D080231003867F1 /* ShareManagerViewController.m */; };
+		686DB87B1D080231003867F1 /* ShareManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8791D080231003867F1 /* ShareManagerViewController.xib */; };
+		686DB8881D08180B003867F1 /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8831D08180B003867F1 /* WXApiManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB8891D08180B003867F1 /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8851D08180B003867F1 /* WXApiRequestHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB88A1D08180B003867F1 /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8871D08180B003867F1 /* WXApiResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB8931D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB88E1D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB8941D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8901D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB8951D081865003867F1 /* WXMediaMessage+messageConstruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8921D081865003867F1 /* WXMediaMessage+messageConstruct.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686DB8971D081BF2003867F1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8961D081BF2003867F1 /* Security.framework */; };
+		686DB8991D081C05003867F1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8981D081C05003867F1 /* CoreTelephony.framework */; };
+		686DB89B1D081C0C003867F1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB89A1D081C0C003867F1 /* SystemConfiguration.framework */; };
+		686DB89D1D081C19003867F1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB89C1D081C19003867F1 /* libz.tbd */; };
+		686DB89F1D081C21003867F1 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB89E1D081C21003867F1 /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		686DB8A11D081C29003867F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8A01D081C29003867F1 /* UIKit.framework */; };
+		686DB8A31D081C2E003867F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8A21D081C2E003867F1 /* Foundation.framework */; };
+		686DB8A61D081FF4003867F1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686DB8A51D081FF4003867F1 /* libc++.tbd */; };
+		686DB8AA1D082589003867F1 /* res1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8A81D082589003867F1 /* res1.jpg */; };
+		686DB8AB1D082589003867F1 /* res1thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8A91D082589003867F1 /* res1thumb.png */; };
+		686DB8AD1D082597003867F1 /* res2.png in Resources */ = {isa = PBXBuildFile; fileRef = 686DB8AC1D082597003867F1 /* res2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +72,38 @@
 		686DB8541D07FBC6003867F1 /* SocialShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		686DB8581D07FBC6003867F1 /* SocialShareUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialShareUITests.m; sourceTree = "<group>"; };
 		686DB85A1D07FBC6003867F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		686DB8681D07FBE3003867F1 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		686DB8691D07FBE3003867F1 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		686DB86A1D07FBE3003867F1 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		686DB86B1D07FBE3003867F1 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		686DB86C1D07FBE3003867F1 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		686DB8771D080231003867F1 /* ShareManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManagerViewController.h; sourceTree = "<group>"; };
+		686DB8781D080231003867F1 /* ShareManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManagerViewController.m; sourceTree = "<group>"; };
+		686DB8791D080231003867F1 /* ShareManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareManagerViewController.xib; sourceTree = "<group>"; };
+		686DB8821D08180B003867F1 /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		686DB8831D08180B003867F1 /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
+		686DB8841D08180B003867F1 /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
+		686DB8851D08180B003867F1 /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
+		686DB8861D08180B003867F1 /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
+		686DB8871D08180B003867F1 /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
+		686DB88C1D081865003867F1 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		686DB88D1D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		686DB88E1D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		686DB88F1D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		686DB8901D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		686DB8911D081865003867F1 /* WXMediaMessage+messageConstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+messageConstruct.h"; sourceTree = "<group>"; };
+		686DB8921D081865003867F1 /* WXMediaMessage+messageConstruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WXMediaMessage+messageConstruct.m"; sourceTree = "<group>"; };
+		686DB8961D081BF2003867F1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		686DB8981D081C05003867F1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		686DB89A1D081C0C003867F1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		686DB89C1D081C19003867F1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		686DB89E1D081C21003867F1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		686DB8A01D081C29003867F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		686DB8A21D081C2E003867F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		686DB8A51D081FF4003867F1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		686DB8A81D082589003867F1 /* res1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res1.jpg; sourceTree = "<group>"; };
+		686DB8A91D082589003867F1 /* res1thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res1thumb.png; sourceTree = "<group>"; };
+		686DB8AC1D082597003867F1 /* res2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +111,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686DB8A61D081FF4003867F1 /* libc++.tbd in Frameworks */,
+				686DB8971D081BF2003867F1 /* Security.framework in Frameworks */,
+				686DB86D1D07FBE3003867F1 /* libWeChatSDK.a in Frameworks */,
+				686DB8991D081C05003867F1 /* CoreTelephony.framework in Frameworks */,
+				686DB89B1D081C0C003867F1 /* SystemConfiguration.framework in Frameworks */,
+				686DB89F1D081C21003867F1 /* libsqlite3.0.tbd in Frameworks */,
+				686DB89D1D081C19003867F1 /* libz.tbd in Frameworks */,
+				686DB8A31D081C2E003867F1 /* Foundation.framework in Frameworks */,
+				686DB8A11D081C29003867F1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +146,7 @@
 				686DB8321D07FBC6003867F1 /* SocialShare */,
 				686DB84C1D07FBC6003867F1 /* SocialShareTests */,
 				686DB8571D07FBC6003867F1 /* SocialShareUITests */,
+				686DB8A41D081C3F003867F1 /* Framework */,
 				686DB8311D07FBC6003867F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +164,8 @@
 		686DB8321D07FBC6003867F1 /* SocialShare */ = {
 			isa = PBXGroup;
 			children = (
+				686DB8761D07FDE8003867F1 /* CustomView */,
+				686DB8661D07FBCE003867F1 /* ShareSDK */,
 				686DB8361D07FBC6003867F1 /* AppDelegate.h */,
 				686DB8371D07FBC6003867F1 /* AppDelegate.m */,
 				686DB8391D07FBC6003867F1 /* ViewController.h */,
@@ -117,6 +182,7 @@
 		686DB8331D07FBC6003867F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				686DB8A71D08257E003867F1 /* Resourc */,
 				686DB8341D07FBC6003867F1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +204,90 @@
 				686DB85A1D07FBC6003867F1 /* Info.plist */,
 			);
 			path = SocialShareUITests;
+			sourceTree = "<group>";
+		};
+		686DB8661D07FBCE003867F1 /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				686DB8671D07FBE3003867F1 /* OpenSDK1.7.1 */,
+			);
+			name = ShareSDK;
+			sourceTree = "<group>";
+		};
+		686DB8671D07FBE3003867F1 /* OpenSDK1.7.1 */ = {
+			isa = PBXGroup;
+			children = (
+				686DB88B1D081865003867F1 /* Helper */,
+				686DB8811D08180B003867F1 /* Control */,
+				686DB8681D07FBE3003867F1 /* libWeChatSDK.a */,
+				686DB8691D07FBE3003867F1 /* README.txt */,
+				686DB86A1D07FBE3003867F1 /* WechatAuthSDK.h */,
+				686DB86B1D07FBE3003867F1 /* WXApi.h */,
+				686DB86C1D07FBE3003867F1 /* WXApiObject.h */,
+			);
+			path = OpenSDK1.7.1;
+			sourceTree = "<group>";
+		};
+		686DB8761D07FDE8003867F1 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				686DB8771D080231003867F1 /* ShareManagerViewController.h */,
+				686DB8781D080231003867F1 /* ShareManagerViewController.m */,
+				686DB8791D080231003867F1 /* ShareManagerViewController.xib */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		686DB8811D08180B003867F1 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				686DB8821D08180B003867F1 /* WXApiManager.h */,
+				686DB8831D08180B003867F1 /* WXApiManager.m */,
+				686DB8841D08180B003867F1 /* WXApiRequestHandler.h */,
+				686DB8851D08180B003867F1 /* WXApiRequestHandler.m */,
+				686DB8861D08180B003867F1 /* WXApiResponseHandler.h */,
+				686DB8871D08180B003867F1 /* WXApiResponseHandler.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		686DB88B1D081865003867F1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				686DB88C1D081865003867F1 /* Constant.h */,
+				686DB88D1D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */,
+				686DB88E1D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */,
+				686DB88F1D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */,
+				686DB8901D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */,
+				686DB8911D081865003867F1 /* WXMediaMessage+messageConstruct.h */,
+				686DB8921D081865003867F1 /* WXMediaMessage+messageConstruct.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		686DB8A41D081C3F003867F1 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				686DB8A51D081FF4003867F1 /* libc++.tbd */,
+				686DB8A21D081C2E003867F1 /* Foundation.framework */,
+				686DB8A01D081C29003867F1 /* UIKit.framework */,
+				686DB89E1D081C21003867F1 /* libsqlite3.0.tbd */,
+				686DB89C1D081C19003867F1 /* libz.tbd */,
+				686DB89A1D081C0C003867F1 /* SystemConfiguration.framework */,
+				686DB8981D081C05003867F1 /* CoreTelephony.framework */,
+				686DB8961D081BF2003867F1 /* Security.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		686DB8A71D08257E003867F1 /* Resourc */ = {
+			isa = PBXGroup;
+			children = (
+				686DB8AC1D082597003867F1 /* res2.png */,
+				686DB8A81D082589003867F1 /* res1.jpg */,
+				686DB8A91D082589003867F1 /* res1thumb.png */,
+			);
+			name = Resourc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +395,12 @@
 			files = (
 				686DB8431D07FBC6003867F1 /* LaunchScreen.storyboard in Resources */,
 				686DB8401D07FBC6003867F1 /* Assets.xcassets in Resources */,
+				686DB87B1D080231003867F1 /* ShareManagerViewController.xib in Resources */,
+				686DB86E1D07FBE3003867F1 /* README.txt in Resources */,
+				686DB8AA1D082589003867F1 /* res1.jpg in Resources */,
 				686DB83E1D07FBC6003867F1 /* Main.storyboard in Resources */,
+				686DB8AB1D082589003867F1 /* res1thumb.png in Resources */,
+				686DB8AD1D082597003867F1 /* res2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +425,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686DB87A1D080231003867F1 /* ShareManagerViewController.m in Sources */,
 				686DB83B1D07FBC6003867F1 /* ViewController.m in Sources */,
+				686DB8931D081865003867F1 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
+				686DB8941D081865003867F1 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				686DB8381D07FBC6003867F1 /* AppDelegate.m in Sources */,
+				686DB8951D081865003867F1 /* WXMediaMessage+messageConstruct.m in Sources */,
+				686DB8881D08180B003867F1 /* WXApiManager.m in Sources */,
+				686DB8891D08180B003867F1 /* WXApiRequestHandler.m in Sources */,
 				686DB8351D07FBC6003867F1 /* main.m in Sources */,
+				686DB88A1D08180B003867F1 /* WXApiResponseHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +575,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang Lin Chen (B5KV6854W4)";
 				INFOPLIST_FILE = SocialShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShare/OpenSDK1.7.1",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BlueCrane.SocialShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "57a6104f-ebfe-416a-a77e-e330f48791dd";
 			};
 			name = Debug;
 		};
@@ -424,10 +594,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang Lin Chen (B5KV6854W4)";
 				INFOPLIST_FILE = SocialShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShare/OpenSDK1.7.1",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BlueCrane.SocialShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "57a6104f-ebfe-416a-a77e-e330f48791dd";
 			};
 			name = Release;
 		};
@@ -496,6 +674,7 @@
 				686DB85F1D07FBC6003867F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		686DB8601D07FBC6003867F1 /* Build configuration list for PBXNativeTarget "SocialShareTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +683,7 @@
 				686DB8621D07FBC6003867F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		686DB8631D07FBC6003867F1 /* Build configuration list for PBXNativeTarget "SocialShareUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +692,7 @@
 				686DB8651D07FBC6003867F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

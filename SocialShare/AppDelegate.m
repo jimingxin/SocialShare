@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WXApiManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    //向微信注册
+    [WXApi registerApp:@"wxd930ea5d5a258f4f" withDescription:@"CustomShare"];
+    
     return YES;
 }
 
