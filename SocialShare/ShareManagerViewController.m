@@ -77,6 +77,7 @@ static ShareManagerViewController *defaultShareManager;
     
     [super viewDidLoad];
     
+    //必须注册不然无法分享
     _tencentOAuth =  [[TencentOAuth alloc] initWithAppId:@"222222"
                                              andDelegate:self];
     
