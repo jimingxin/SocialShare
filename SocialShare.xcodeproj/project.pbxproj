@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		685934331D0D094B00A12AC2 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685934311D0D094B00A12AC2 /* TencentOpenAPI.framework */; };
+		685934341D0D094B00A12AC2 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 685934321D0D094B00A12AC2 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		685934361D0D09B300A12AC2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685934351D0D09B300A12AC2 /* CoreImage.framework */; };
+		685934381D0D09BC00A12AC2 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685934371D0D09BC00A12AC2 /* Photos.framework */; };
+		6859343A1D0D09C300A12AC2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685934391D0D09C300A12AC2 /* AssetsLibrary.framework */; };
+		6859343C1D0D09CD00A12AC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6859343B1D0D09CD00A12AC2 /* CoreLocation.framework */; };
+		6859343E1D0D09D600A12AC2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6859343D1D0D09D600A12AC2 /* QuartzCore.framework */; };
+		685934401D0D09DE00A12AC2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6859343F1D0D09DE00A12AC2 /* MobileCoreServices.framework */; };
+		685934421D0D09F000A12AC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685934411D0D09F000A12AC2 /* CoreGraphics.framework */; };
 		686DB8351D07FBC6003867F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8341D07FBC6003867F1 /* main.m */; };
 		686DB8381D07FBC6003867F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB8371D07FBC6003867F1 /* AppDelegate.m */; };
 		686DB83B1D07FBC6003867F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686DB83A1D07FBC6003867F1 /* ViewController.m */; };
@@ -56,6 +65,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		685934311D0D094B00A12AC2 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		685934321D0D094B00A12AC2 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		685934351D0D09B300A12AC2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		685934371D0D09BC00A12AC2 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		685934391D0D09C300A12AC2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		6859343B1D0D09CD00A12AC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6859343D1D0D09D600A12AC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6859343F1D0D09DE00A12AC2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		685934411D0D09F000A12AC2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		686DB8301D07FBC6003867F1 /* SocialShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		686DB8341D07FBC6003867F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		686DB8361D07FBC6003867F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,11 +129,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685934421D0D09F000A12AC2 /* CoreGraphics.framework in Frameworks */,
+				685934401D0D09DE00A12AC2 /* MobileCoreServices.framework in Frameworks */,
+				6859343E1D0D09D600A12AC2 /* QuartzCore.framework in Frameworks */,
+				6859343C1D0D09CD00A12AC2 /* CoreLocation.framework in Frameworks */,
+				6859343A1D0D09C300A12AC2 /* AssetsLibrary.framework in Frameworks */,
+				685934381D0D09BC00A12AC2 /* Photos.framework in Frameworks */,
+				685934361D0D09B300A12AC2 /* CoreImage.framework in Frameworks */,
 				686DB8A61D081FF4003867F1 /* libc++.tbd in Frameworks */,
 				686DB8971D081BF2003867F1 /* Security.framework in Frameworks */,
 				686DB86D1D07FBE3003867F1 /* libWeChatSDK.a in Frameworks */,
 				686DB8991D081C05003867F1 /* CoreTelephony.framework in Frameworks */,
 				686DB89B1D081C0C003867F1 /* SystemConfiguration.framework in Frameworks */,
+				685934331D0D094B00A12AC2 /* TencentOpenAPI.framework in Frameworks */,
 				686DB89F1D081C21003867F1 /* libsqlite3.0.tbd in Frameworks */,
 				686DB89D1D081C19003867F1 /* libz.tbd in Frameworks */,
 				686DB8A31D081C2E003867F1 /* Foundation.framework in Frameworks */,
@@ -140,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		685934301D0D094B00A12AC2 /* TencentOpenAPISDK_V3.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				685934311D0D094B00A12AC2 /* TencentOpenAPI.framework */,
+				685934321D0D094B00A12AC2 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = TencentOpenAPISDK_V3.1.0;
+			sourceTree = "<group>";
+		};
 		686DB8271D07FBC6003867F1 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +244,7 @@
 		686DB8661D07FBCE003867F1 /* ShareSDK */ = {
 			isa = PBXGroup;
 			children = (
+				685934301D0D094B00A12AC2 /* TencentOpenAPISDK_V3.1.0 */,
 				686DB8671D07FBE3003867F1 /* OpenSDK1.7.1 */,
 			);
 			name = ShareSDK;
@@ -268,6 +304,13 @@
 		686DB8A41D081C3F003867F1 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				685934411D0D09F000A12AC2 /* CoreGraphics.framework */,
+				6859343F1D0D09DE00A12AC2 /* MobileCoreServices.framework */,
+				6859343D1D0D09D600A12AC2 /* QuartzCore.framework */,
+				6859343B1D0D09CD00A12AC2 /* CoreLocation.framework */,
+				685934391D0D09C300A12AC2 /* AssetsLibrary.framework */,
+				685934371D0D09BC00A12AC2 /* Photos.framework */,
+				685934351D0D09B300A12AC2 /* CoreImage.framework */,
 				686DB8A51D081FF4003867F1 /* libc++.tbd */,
 				686DB8A21D081C2E003867F1 /* Foundation.framework */,
 				686DB8A01D081C29003867F1 /* UIKit.framework */,
@@ -400,6 +443,7 @@
 				686DB86E1D07FBE3003867F1 /* README.txt in Resources */,
 				686DB8AA1D082589003867F1 /* res1.jpg in Resources */,
 				686DB83E1D07FBC6003867F1 /* Main.storyboard in Resources */,
+				685934341D0D094B00A12AC2 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				686DB8AB1D082589003867F1 /* res1thumb.png in Resources */,
 				686DB8AD1D082597003867F1 /* res2.png in Resources */,
 			);
@@ -577,6 +621,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang Lin Chen (B5KV6854W4)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShare/TencentOpenAPISDK_V3.1.0",
+				);
 				INFOPLIST_FILE = SocialShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,6 +644,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang Lin Chen (B5KV6854W4)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SocialShare/TencentOpenAPISDK_V3.1.0",
+				);
 				INFOPLIST_FILE = SocialShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

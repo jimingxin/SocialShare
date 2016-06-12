@@ -89,6 +89,9 @@
                             <state key="normal" title="QQ" image="sns_icon_QQ">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="QQButtonAction:" destination="-1" eventType="touchUpInside" id="iGp-Gp-tnF"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlC-fA-X9v">
                             <rect key="frame" x="90" y="112" width="60" height="80"/>

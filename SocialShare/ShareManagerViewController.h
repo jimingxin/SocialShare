@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 /*! @brief 分享类型
  *
@@ -16,12 +18,15 @@ typedef NS_ENUM(NSInteger,ShareType){
     ShareTypeImage = 1,        /**< 分享图片    */
     ShareTypeURL = 2,        /**< 分享链接  */
 };
-@interface ShareManagerViewController : UIViewController
+@interface ShareManagerViewController : UIViewController<QQApiInterfaceDelegate>
 
 
 
 
 #pragma mark /***********成员变量和属性*****************/
+//腾讯分享注册
+@property (nonatomic, strong) TencentOAuth *tencentOAuth;
+
 //分享类型
 @property (nonatomic, assign) ShareType shareType;
 
