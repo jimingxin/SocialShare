@@ -76,6 +76,9 @@
                             <state key="normal" title="QQ空间" image="sns_icon_qqZone">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="QQZoneButtonAction:" destination="-1" eventType="touchUpInside" id="XZu-JJ-2OM"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d7-Ip-rVu" userLabel="QQ">
                             <rect key="frame" x="9" y="112" width="60" height="80"/>

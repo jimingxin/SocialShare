@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <TencentOpenAPI/QQApiInterface.h>
+
 #import <TencentOpenAPI/TencentOAuth.h>
 
 /*! @brief 分享类型

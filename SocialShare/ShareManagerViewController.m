@@ -189,6 +189,24 @@ static ShareManagerViewController *defaultShareManager;
 }
 
 /**
+ *  QQ空间 分享图片和 文字
+ *
+ *  @param sender qq空间分享按钮
+ */
+-(IBAction)QQZoneButtonAction:(UIButton *)sender{
+    
+    if (_shareType == ShareTypeText) {
+        
+        [self sendTextMessageForQQZone];
+        
+    }else if (_shareType == ShareTypeImage){
+        
+        [self sendImageMessageForQQZone];
+        
+    }
+}
+
+/**
  *  调用系统的风向
  *
  *  @param sender
@@ -232,7 +250,7 @@ static ShareManagerViewController *defaultShareManager;
                              InScene:_currentScene];
 }
 
-#pragma mark /******************QQ和QQ空间相关分享操作******************/
+#pragma mark /******************QQ相关分享操作******************/
 
 - (void)onReq:(QQBaseReq *)req
 {
@@ -405,5 +423,34 @@ static ShareManagerViewController *defaultShareManager;
 }
 
 
+#pragma mark /******************QQ空间相关分享操作******************/
+/**
+ *  QQ空间 分享文字
+ */
+- (void) sendTextMessageForQQZone
+{
+    
+    QQApiImageArrayForQZoneObject *obj = [QQApiImageArrayForQZoneObject objectWithimageDataArray:nil title:@"QQZone文字分享"];
+    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:obj];
+    QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
+    [self handleSendResult:sent];
+    
+}
+
+/**
+ *  QQ空间分享图片
+ */
+- (void) sendImageMessageForQQZone
+{
+    NSData *imgData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"]];
+    
+    NSArray *imageAssetsForQZone =[[NSArray alloc] initWithObjects:imgData, nil];
+    QQApiImageArrayForQZoneObject *img = [QQApiImageArrayForQZoneObject objectWithimageDataArray:imageAssetsForQZone title:@"QQZone文字和图片"];
+    SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:img];
+    QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
+    [self handleSendResult:sent];
+    
+    
+}
 
 @end
