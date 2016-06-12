@@ -65,13 +65,15 @@ static ShareManagerViewController *defaultShareManager;
 
 
 /**
- *  天气情况
+ *  调用界面初始化
  */
 - (void)viewDidLoad {
    
     [WXApiManager sharedManager].delegate = self;
     
-    [ShareManagerViewController defaultShareManager].view.frame = CGRectMake(0, 0, 320, 568);
+    CGRect windowFrame = [[UIScreen mainScreen]bounds];
+    
+    [ShareManagerViewController defaultShareManager].view.frame = CGRectMake(0, 0, windowFrame.size.width, windowFrame.size.height);
     
     [super viewDidLoad];
     
