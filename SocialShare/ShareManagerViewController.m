@@ -10,8 +10,11 @@
 #import "WXApiManager.h"
 #import "WXApiRequestHandler.h"
 #import "Constant.h"
+#import "WeiboSDK.h"
+#import "AppDelegate.h"
+#define kRedirectURI    @"http://www.sina.com"
 
-@interface ShareManagerViewController ()<WXApiManagerDelegate>
+@interface ShareManagerViewController ()<WXApiManagerDelegate,WBHttpRequestDelegate>
 
 @property (nonatomic) enum WXScene currentScene;
 
@@ -204,6 +207,29 @@ static ShareManagerViewController *defaultShareManager;
         [self sendImageMessageForQQZone];
         
     }
+}
+
+/**
+ *  Sina微博 分享图片和 文字 以及连接
+ *
+ *  @param sender qq空间分享按钮
+ */
+-(IBAction)SinaWeiBoButtonAction:(UIButton *)sender{
+    
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = kRedirectURI;
+    authRequest.scope = @"all";
+    
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self messageToShare] authInfo:authRequest access_token:myDelegate.wbtoken];
+    request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
+                         @"Other_Info_1": [NSNumber numberWithInt:123],
+                         @"Other_Info_2": @[@"obj1", @"obj2"],
+                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+    //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
+    [WeiboSDK sendRequest:request];
+    
 }
 
 /**
@@ -452,5 +478,38 @@ static ShareManagerViewController *defaultShareManager;
     
     
 }
+
+
+#pragma mark /*********************新浪微博分享相关操作*******************/
+- (WBMessageObject *)messageToShare
+{
+    WBMessageObject *message = [WBMessageObject message];
+    
+    if (_shareType == ShareTypeText)
+    {
+        message.text = NSLocalizedString(@"测试通过WeiboSDK发送文字到微博!", nil);
+    }
+    
+    if (_shareType == ShareTypeImage)
+    {
+        WBImageObject *image = [WBImageObject object];
+        image.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"]];
+        message.imageObject = image;
+    }
+    
+    if (_shareType == ShareTypeURL)
+    {
+        WBWebpageObject *webpage = [WBWebpageObject object];
+        webpage.objectID = @"identifier1";
+        webpage.title = NSLocalizedString(@"分享网页标题", nil);
+        webpage.description = [NSString stringWithFormat:NSLocalizedString(@"分享网页内容简介-%.0f", nil), [[NSDate date] timeIntervalSince1970]];
+        webpage.thumbnailData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1thumb" ofType:@"png"]];
+        webpage.webpageUrl = @"http://sina.cn?a=1";
+        message.mediaObject = webpage;
+    }
+    
+    return message;
+}
+
 
 @end
