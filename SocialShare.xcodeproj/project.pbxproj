@@ -197,7 +197,6 @@
 		686DB8271D07FBC6003867F1 = {
 			isa = PBXGroup;
 			children = (
-				680C57C51D0E55830008420F /* ImageIO.framework */,
 				686DB8321D07FBC6003867F1 /* SocialShare */,
 				686DB84C1D07FBC6003867F1 /* SocialShareTests */,
 				686DB8571D07FBC6003867F1 /* SocialShareUITests */,
@@ -325,6 +324,7 @@
 		686DB8A41D081C3F003867F1 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				680C57C51D0E55830008420F /* ImageIO.framework */,
 				685934411D0D09F000A12AC2 /* CoreGraphics.framework */,
 				6859343F1D0D09DE00A12AC2 /* MobileCoreServices.framework */,
 				6859343D1D0D09D600A12AC2 /* QuartzCore.framework */,
@@ -679,7 +679,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sina.weibo.SNWeiboSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "961173be-e093-4653-ad6d-a46e0940d927";
+				PROVISIONING_PROFILE = "37ff46dd-30fb-405f-8a2d-885d16b91535";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -705,7 +705,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sina.weibo.SNWeiboSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "961173be-e093-4653-ad6d-a46e0940d927";
+				PROVISIONING_PROFILE = "37ff46dd-30fb-405f-8a2d-885d16b91535";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

@@ -13,6 +13,8 @@
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
 #define kRedirectURI    @"http://www.sina.com"
+#define ImagePath(imageName,ImageType) [[NSBundle mainBundle] pathForResource:_shareDictionary[imageName] ofType:ImageType]
+
 
 @interface ShareManagerViewController ()<WXApiManagerDelegate,WBHttpRequestDelegate>
 
@@ -80,7 +82,9 @@ static ShareManagerViewController *defaultShareManager;
     
     [super viewDidLoad];
     
-    //必须注册不然无法分享
+    //必须注册不然无法分享 -qq和qq空间需要使用的
+    
+    
     _tencentOAuth =  [[TencentOAuth alloc] initWithAppId:@"222222"
                                              andDelegate:self];
     
@@ -121,8 +125,9 @@ static ShareManagerViewController *defaultShareManager;
     
 }
 
-//分享
+//分享传入数据
 -(void)setShareData:(NSDictionary *)dictionary actionType:(ShareType)shareType{
+    _shareDictionary = dictionary;
     _shareType = shareType;
 }
 
@@ -233,29 +238,101 @@ static ShareManagerViewController *defaultShareManager;
 }
 
 /**
- *  调用系统的风向
+ *  复制按钮点击
+ */
+-(IBAction)copyButtonAction:(UIButton *)sender{
+    
+     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    
+    if (_shareType == ShareTypeText) {
+
+        [pasteboard setString: _shareDictionary[@"Text"]];
+        
+    }else if (_shareType == ShareTypeImage){
+        
+         [pasteboard setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_shareDictionary[@"Image"] ofType:@"jpg"]]];
+    }else if (_shareType == ShareTypeURL){
+        
+        [pasteboard setURL:[NSURL URLWithString:_shareDictionary[@"URL"]]];
+    }
+    
+    [self showAlertView:@"复制成功"];
+}
+
+/**
+ *  调用系统的分享
  *
  *  @param sender
  */
 -(IBAction)otherShareAction:(id)sender{
     
-    UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:@[[[NSBundle mainBundle] URLForResource:@"res1" withExtension:@"jpg"]] applicationActivities:@[]];
+    UIActivityViewController *activity = nil;
+    
+    if (_shareType == ShareTypeText) {
+        
+        activity = [[UIActivityViewController alloc] initWithActivityItems:@[_shareDictionary[@"Text"]] applicationActivities:@[]];
+        
+    }else if (_shareType == ShareTypeImage){
+        UIImage *shareImage =[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:_shareDictionary[@"Image"] ofType:@"jpg"]];
+        
+         activity = [[UIActivityViewController alloc] initWithActivityItems:@[shareImage] applicationActivities:@[]];
+        
+    }else if (_shareType == ShareTypeURL){
+        
+        activity = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:_shareDictionary[@"URL"]]] applicationActivities:@[]];
+    }
+    
     
     
     [self presentViewController:activity animated:YES completion:NULL];
 }
 
+/**
+ *  弹出提醒
+ */
+-(void)showAlertView:(NSString *)alertText{
+    
+    UILabel *alertLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width-240)/2, (self.view.frame.size.height - 120)/2, 240, 60)];
+    alertLabel.textColor = [UIColor whiteColor];
+    alertLabel.textAlignment = NSTextAlignmentCenter;
+    alertLabel.font = [UIFont systemFontOfSize:16.f];
+    alertLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    alertLabel.text = alertText;
+    alertLabel.alpha = 0;
+    alertLabel.layer.cornerRadius = 7;
+    alertLabel.layer.masksToBounds = YES;
+    [self.view addSubview:alertLabel];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        //动画执行代码
+        alertLabel.alpha = 0.8;
+        
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [UIView animateWithDuration:1.0 delay:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                
+                alertLabel.alpha = 0;
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    [alertLabel removeFromSuperview];
+                    
+                }
+                
+            }];
+        }
+        
+    }];
+}
 
 #pragma mark /******************微信相关分享操作******************/
 
 - (void)sendTextContent {
-    [WXApiRequestHandler sendText:kTextMessage
+    [WXApiRequestHandler sendText:_shareDictionary[@"Text"]
                           InScene:_currentScene];
 }
 
 - (void)sendImageContent {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"];
-    NSData *imageData = [NSData dataWithContentsOfFile:filePath];
+    NSData *imageData = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
     
     UIImage *thumbImage = [UIImage imageNamed:@"res1thumb.png"];
     [WXApiRequestHandler sendImageData:imageData
@@ -267,11 +344,11 @@ static ShareManagerViewController *defaultShareManager;
 }
 
 - (void)sendLinkContent {
-    UIImage *thumbImage = [UIImage imageNamed:@"res2.png"];
-    [WXApiRequestHandler sendLinkURL:kLinkURL
+    UIImage *thumbImage = [UIImage imageWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
+    [WXApiRequestHandler sendLinkURL:_shareDictionary[@"URL"]
                              TagName:kLinkTagName
-                               Title:kLinkTitle
-                         Description:kLinkDescription
+                               Title:_shareDictionary[@"Text"]
+                         Description:_shareDictionary[@"URLContent"]
                           ThumbImage:thumbImage
                              InScene:_currentScene];
 }
@@ -318,7 +395,7 @@ static ShareManagerViewController *defaultShareManager;
 - (void) sendTextMessageForQQ
 {
     
-    QQApiTextObject* txtObj = [QQApiTextObject objectWithText:kTextMessage];
+    QQApiTextObject* txtObj = [QQApiTextObject objectWithText:_shareDictionary[@"Text"]];
     SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:txtObj];
     
     QQApiSendResultCode sent = [QQApiInterface sendReq:req];
@@ -333,8 +410,7 @@ static ShareManagerViewController *defaultShareManager;
 {
     
     
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"res1.jpg"];
-    NSData* data = [NSData dataWithContentsOfFile:path];
+    NSData* data = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
     
     QQApiImageObject* img = [QQApiImageObject objectWithData:data previewImageData:data title:@"默认图片分享" description:kMessageExt];
     SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:img];
@@ -351,11 +427,11 @@ static ShareManagerViewController *defaultShareManager;
 - (void) sendNewsMessageWithNetworkImageForQQ
 {
     
-    NSString *titleStr = @"天公作美伦敦奥运圣火点燃成功 火炬传递开启";
-    NSString *ContentStr = @"腾讯体育讯 当地时间5月10日中午，阳光和全世界的目光聚焦于希腊最高女祭司手中的火炬上，5秒钟内世界屏住呼吸。火焰骤然升腾的瞬间，古老的号角声随之从赫拉神庙传出——第30届伦敦夏季奥运会圣火在古奥林匹亚遗址点燃。取火仪式前，国际奥委会主席罗格、希腊奥委会主席卡普拉洛斯和伦敦奥组委主席塞巴斯蒂安-科互赠礼物，男祭司继北京奥运会后，再度出现在采火仪式中。";
-    NSString *urlStr = @"http://sports.qq.com/a/20120510/000650.htm";
+    NSString *titleStr = _shareDictionary[@"Text"];
+    NSString *ContentStr = _shareDictionary[@"URLContent"];
+    NSString *urlStr = _shareDictionary[@"URL"];;
     
-    NSURL *previewURL = [NSURL URLWithString:@"http://img1.gtimg.com/sports/pics/hv1/87/16/1037/67435092.jpg"];
+    NSURL *previewURL = [NSURL URLWithString:_shareDictionary[@"URLIMG"]];
     NSURL* url = [NSURL URLWithString:urlStr];
     
     QQApiNewsObject* img = [QQApiNewsObject objectWithURL:url title:titleStr description:ContentStr previewImageURL:previewURL];
@@ -371,13 +447,12 @@ static ShareManagerViewController *defaultShareManager;
  */
 - (void) sendNewsMessageWithLocalImage
 {
-    NSString *titleStr = @"天公作美伦敦奥运圣火点燃成功 火炬传递开启";
-    NSString *ContentStr = @"腾讯体育讯 当地时间5月10日中午，阳光和全世界的目光聚焦于希腊最高女祭司手中的火炬上，5秒钟内世界屏住呼吸。火焰骤然升腾的瞬间，古老的号角声随之从赫拉神庙传出——第30届伦敦夏季奥运会圣火在古奥林匹亚遗址点燃。取火仪式前，国际奥委会主席罗格、希腊奥委会主席卡普拉洛斯和伦敦奥组委主席塞巴斯蒂安-科互赠礼物，男祭司继北京奥运会后，再度出现在采火仪式中。";
-    NSString *urlStr = @"http://sports.qq.com/a/20120510/000650.htm";
+    NSString *titleStr = _shareDictionary[@"Text"];
+    NSString *ContentStr = _shareDictionary[@"URLContent"];
+    NSString *urlStr = _shareDictionary[@"URL"];
     
     
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"res1.jpg"];
-    NSData* data = [NSData dataWithContentsOfFile:path];
+       NSData* data = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
     NSURL* url = [NSURL URLWithString:urlStr];
     
     QQApiNewsObject* img = [QQApiNewsObject objectWithURL:url title:titleStr description:ContentStr previewImageData:data];
@@ -456,7 +531,7 @@ static ShareManagerViewController *defaultShareManager;
 - (void) sendTextMessageForQQZone
 {
     
-    QQApiImageArrayForQZoneObject *obj = [QQApiImageArrayForQZoneObject objectWithimageDataArray:nil title:@"QQZone文字分享"];
+    QQApiImageArrayForQZoneObject *obj = [QQApiImageArrayForQZoneObject objectWithimageDataArray:nil title:_shareDictionary[@"Text"]];
     SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:obj];
     QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
     [self handleSendResult:sent];
@@ -468,10 +543,10 @@ static ShareManagerViewController *defaultShareManager;
  */
 - (void) sendImageMessageForQQZone
 {
-    NSData *imgData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"]];
+    NSData *imgData = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
     
     NSArray *imageAssetsForQZone =[[NSArray alloc] initWithObjects:imgData, nil];
-    QQApiImageArrayForQZoneObject *img = [QQApiImageArrayForQZoneObject objectWithimageDataArray:imageAssetsForQZone title:@"QQZone文字和图片"];
+    QQApiImageArrayForQZoneObject *img = [QQApiImageArrayForQZoneObject objectWithimageDataArray:imageAssetsForQZone title:_shareDictionary[@"Text"]];
     SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:img];
     QQApiSendResultCode sent = [QQApiInterface SendReqToQZone:req];
     [self handleSendResult:sent];
@@ -487,13 +562,13 @@ static ShareManagerViewController *defaultShareManager;
     
     if (_shareType == ShareTypeText)
     {
-        message.text = NSLocalizedString(@"测试通过WeiboSDK发送文字到微博!", nil);
+        message.text = _shareDictionary[@"Text"];
     }
     
     if (_shareType == ShareTypeImage)
     {
         WBImageObject *image = [WBImageObject object];
-        image.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"]];
+        image.imageData = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
         message.imageObject = image;
     }
     
@@ -501,9 +576,9 @@ static ShareManagerViewController *defaultShareManager;
     {
         WBWebpageObject *webpage = [WBWebpageObject object];
         webpage.objectID = @"identifier1";
-        webpage.title = NSLocalizedString(@"分享网页标题", nil);
-        webpage.description = [NSString stringWithFormat:NSLocalizedString(@"分享网页内容简介-%.0f", nil), [[NSDate date] timeIntervalSince1970]];
-        webpage.thumbnailData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"res1thumb" ofType:@"png"]];
+        webpage.title = _shareDictionary[@"Text"];
+        webpage.description = _shareDictionary[@"URLContent"];
+        webpage.thumbnailData = [NSData dataWithContentsOfFile:ImagePath(_shareDictionary[@"Image"],@"jpg")];
         webpage.webpageUrl = @"http://sina.cn?a=1";
         message.mediaObject = webpage;
     }

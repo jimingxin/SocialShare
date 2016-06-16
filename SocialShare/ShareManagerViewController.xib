@@ -35,8 +35,8 @@
                                 <constraint firstAttribute="width" constant="60" id="LfW-6d-FSq"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="微信" image="sns_icon_WeChat">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -47,8 +47,8 @@
                         <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-ew-XSE">
                             <rect key="frame" x="90" y="15" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="朋友圈" image="sns_icon_WeChatFriend">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -59,8 +59,8 @@
                         <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-Xv-5cC">
                             <rect key="frame" x="171" y="15" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="微信收藏" image="sns_icon_WeChatShouCang">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -71,8 +71,8 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wru-4G-CbJ">
                             <rect key="frame" x="252" y="15" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="QQ空间" image="sns_icon_qqZone">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -87,8 +87,8 @@
                                 <constraint firstAttribute="height" constant="80" id="pSV-Gy-XNZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="QQ" image="sns_icon_QQ">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -99,8 +99,8 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlC-fA-X9v">
                             <rect key="frame" x="90" y="112" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
                             <state key="normal" title="新浪微博" image="sns_icon_sina">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -111,18 +111,21 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eye-qq-3tb">
                             <rect key="frame" x="171" y="112" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
-                            <state key="normal" title="腾讯微博" image="sns_icon_qqWeiBo">
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
+                            <state key="normal" title="复制" image="copy">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="copyButtonAction:" destination="-1" eventType="touchUpInside" id="4ee-9V-c5h"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-VH-ioE">
                             <rect key="frame" x="252" y="112" width="60" height="80"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <inset key="titleEdgeInsets" minX="-59" minY="50" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="30"/>
-                            <state key="normal" title="其他" image="sns_icon_sina">
+                            <inset key="titleEdgeInsets" minX="-99" minY="50" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="25"/>
+                            <state key="normal" title="其他" image="more">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -201,12 +204,13 @@
         </view>
     </objects>
     <resources>
-        <image name="sns_icon_QQ" width="58" height="58"/>
-        <image name="sns_icon_WeChat" width="58" height="58"/>
-        <image name="sns_icon_WeChatFriend" width="58" height="58"/>
-        <image name="sns_icon_WeChatShouCang" width="58" height="58"/>
-        <image name="sns_icon_qqWeiBo" width="58" height="58"/>
-        <image name="sns_icon_qqZone" width="58" height="58"/>
-        <image name="sns_icon_sina" width="58" height="58"/>
+        <image name="copy" width="97" height="97"/>
+        <image name="more" width="97" height="97"/>
+        <image name="sns_icon_QQ" width="97" height="97"/>
+        <image name="sns_icon_WeChat" width="97" height="97"/>
+        <image name="sns_icon_WeChatFriend" width="97" height="97"/>
+        <image name="sns_icon_WeChatShouCang" width="97" height="97"/>
+        <image name="sns_icon_qqZone" width="97" height="97"/>
+        <image name="sns_icon_sina" width="97" height="97"/>
     </resources>
 </document>

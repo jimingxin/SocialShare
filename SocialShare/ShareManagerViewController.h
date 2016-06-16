@@ -25,6 +25,10 @@ typedef NS_ENUM(NSInteger,ShareType){
 
 
 #pragma mark /***********成员变量和属性*****************/
+//分享的数据
+@property (nonatomic, strong) NSDictionary *shareDictionary;
+
+
 //腾讯分享注册
 @property (nonatomic, strong) TencentOAuth *tencentOAuth;
 
