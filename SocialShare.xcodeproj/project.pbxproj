@@ -668,7 +668,7 @@
 					"$(PROJECT_DIR)/SocialShare/TencentOpenAPISDK_V3.1.0",
 				);
 				INFOPLIST_FILE = SocialShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,7 +694,7 @@
 					"$(PROJECT_DIR)/SocialShare/TencentOpenAPISDK_V3.1.0",
 				);
 				INFOPLIST_FILE = SocialShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

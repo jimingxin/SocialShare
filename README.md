@@ -5,6 +5,7 @@ Security.framework或者libc++
 
 //下面还会添加QQ分享和QQ空间以及新浪微博的分享 谢谢关注
 1、2016年06月12日添加了QQ和QQ空间的分享
+    >1.TencentApiSdk 如果报错，可能需要设置下【TARGETS】-> Build Phases -> Build Active Architecture Only - Debug 设置为YES
 
 2、2016年06月13日添加了新浪微博的分享
     >1.-[NSConcreteMutableData wbsdk_base64EncodedString]: unrecognized selector sent to instance 0x7ff61b8 如果报这个错 需要在 【Build Settings】->【Other Linker Flags】中添加-ObjC
